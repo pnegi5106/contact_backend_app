@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Git Clone') {
             steps {
-               git branch: 'main', url: 'https://github.com/ashokitschool/contact_backend_app.git'
+               git branch: 'main', url: 'https://github.com/prashant091993/contact_backend_app.git'
             }
         }
         stage('Maven Build'){
@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Docker Image'){
             steps{
-             sh 'docker build -t ashokit/contact_backend_app .'
+             sh 'docker build -t prashantsingh1993/contact_backend_app .'
             }
         }
         stage('Docker Image push'){
