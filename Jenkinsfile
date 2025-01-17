@@ -24,8 +24,8 @@ pipeline {
         stage('Docker Image push'){
             steps{
             withCredentials([string(credentialsId: 'docker_pwd', variable: 'docker_pwd')]) {
-                   sh 'docker login -u ashokit -p ${docker_pwd}'
-                   sh 'docker push ashokit/contact_backend_app'
+                   sh 'docker login -u prashantsingh1993 -p ${docker_pwd}'
+                   sh 'docker push prashantsingh1993/contact_backend_app'
             }
             }
         }
