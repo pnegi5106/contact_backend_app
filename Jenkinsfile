@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Git Clone') {
             steps {
-               git branch: 'main', url: 'https://github.com/prashant091993/contact_backend_app.git'
+               git branch: 'main', url: 'https://github.com/pnegi5106/contact_backend_app.git'
             }
         }
         stage('Maven Build'){
@@ -18,14 +18,14 @@ pipeline {
         }
         stage('Docker Image'){
             steps{
-             sh 'docker build -t prashantsingh1993/contact_backend_app .'
+             sh 'docker build -t pradeep332/contact_backend_app .'
             }
         }
         stage('Docker Image push'){
             steps{
             withCredentials([string(credentialsId: 'docker_pwd', variable: 'docker_pwd')]) {
-                   sh 'docker login -u prashantsingh1993 -p ${docker_pwd}'
-                   sh 'docker push prashantsingh1993/contact_backend_app'
+                   sh 'docker login -u pradeep332 -p ${docker_pwd}'
+                   sh 'docker push pradeep332/contact_backend_app'
             }
             }
         }
